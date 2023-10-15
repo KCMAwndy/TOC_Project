@@ -1,30 +1,48 @@
-var score = [
-    [101, "Mr.Groose Groose Angle", "../img/angle-duck.jpg"],
-    [98, "Mr.Groose Groose Dark", "../img/dark-duck.jpg"],
-    [103, "Mr.Groose Groose Hurt", "../img/hurt-duck.jpg"],
-    [143, "Mr.Groose Groose Red", "../img/red-duck.webp"],
-    [34, "Mr.Groose Groose White", "../img/white-duck.webp"],
-    [94, "Mr.Groose Groose Yellow", "../img/yellow-duck.webp"]
+let roomData = JSON.parse(localStorage.getItem("roomData") ?? "{}");
+if (!roomData?.progress) {
+	alert("No game progress data found. Dont come here!")
+	location.href = "/Web_Frontend/src/page/setting.html";
+}
+var images = ["../img/angle-duck.jpg"
+	, "../img/dark-duck.jpg"
+	, "../img/hurt-duck.jpg"
+	, "../img/red-duck.webp"
+	, "../img/white-duck.webp"
+	, "../img/yellow-duck.webp"
 ];
 
+var score = roomData.users.map((user, index) => [roomData.progress.walkDistance[index], user.name, images[index]]);
+console.log(score)
+// เดินมากสุด
+// ถอยหลังมากสุด
+// ตกงูมากสุด
+// ตก event มากสุด
+// ทอยได้หน้าเดิมต่อเนื่องมากสุด
+let frames = document.querySelectorAll(".special-content img")
+roomData.progress.reward.forEach((reward, index) => {
+	if(reward < 0)
+		return;
+	let player = score[reward];
+	frames[index].src = player[2];
+});
 
 var sortedArray = score.sort(function(a, b) {
-    if (a[0] == b[0]) {
-      return a[1] - b[1];
-    }
-    return b[0] - a[0];
-  });
+	if (a[0] == b[0]) {
+		return a[1] - b[1];
+	}
+	return b[0] - a[0];
+});
 
 var scoreBoard = document.getElementById("score-players");
 
-for(const player of sortedArray) {
-    let p = `
+for (const player of sortedArray) {
+	let p = `
             <div class="score-player">
                 <img src=${player[2]} alt="player">
                 <h2>${player[1]}</h2>
                 <h2>${player[0]}</h2>
             </div>`
-    scoreBoard.insertAdjacentHTML('beforeend', p);
+	scoreBoard.insertAdjacentHTML('beforeend', p);
 }
 
 var winnerElm = document.getElementById("winner-container");
@@ -39,13 +57,13 @@ winnerElm.insertAdjacentHTML('beforeend', el);
 var mainCtn = document.getElementById("main-container");
 
 const changeColor = () => {
-    let b = document.getElementById("bg-color");
-    if(b.value.length == 6) {
-        try {
-            mainCtn.style.backgroundColor = `#${b.value}`;
-            console.log(mainCtn.style);
-        } catch {
-            mainCtn.style.backgroundColor = "#ffffff";
-        }
-    }
+	let b = document.getElementById("bg-color");
+	if (b.value.length == 6) {
+		try {
+			mainCtn.style.backgroundColor = `#${b.value}`;
+			console.log(mainCtn.style);
+		} catch {
+			mainCtn.style.backgroundColor = "#ffffff";
+		}
+	}
 };
