@@ -219,6 +219,11 @@ h3 {
     padding: 2px;
     position: relative;
 }
+.special-content img{
+	width: 100%;
+	height: 100%;
+	border-radius: 12px 12px 0 12px;
+}
 .special-content > *::after {
     position: absolute;
     bottom: -25%;
