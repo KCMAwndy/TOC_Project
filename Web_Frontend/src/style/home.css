@@ -10,6 +10,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Kanit';
+    background-image: url('../img/space.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
 }
 
 h1 {
@@ -179,10 +183,11 @@ h3 {
 .special-container {
     display: flex;
     position: absolute;
+    z-index: 2;
     justify-content: space-around;
     align-items: center;
-    max-width: 1vh;
-    max-height: 5vw;
+    /* max-width: 1vh;
+    max-height: 5vw; */
     font-size:xx-small;
     flex-direction: column;
     color: var(--origin-gray);
@@ -326,9 +331,10 @@ h3 {
     z-index:1;
     display: flex;
     background-color: transparent;
-    justify-content: center;
+    justify-content: flex-end;
+    /* border-style: solid; */
     align-items: center;
-    min-width: 90%;
+    right: 130px;
     margin-bottom: -5vh;
     min-height: 0vh;
 
@@ -356,17 +362,10 @@ h3 {
     justify-content:space-around;
     align-items: flex-start;
     background-size: cover;
-    position: relative;
     min-width: 80%;
     min-height: 30%;
-
     padding-top: 7%;
     padding-bottom: 10%;
- 
-
-
-
-
 }
 
 .bottom-navbar{
@@ -411,4 +410,3 @@ border-radius: 15px;
     align-self: center;
     margin-right: 45vh;
 }
-

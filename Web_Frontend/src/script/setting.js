@@ -172,29 +172,29 @@ function updateXY() {
 }
 
 function createSVG(div){
-    //chess
-    const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svgElement.setAttribute("version", "1.0");
-    svgElement.setAttribute("fill", "white");
-    svgElement.setAttribute("width", div.style.width);
-    svgElement.setAttribute("height", (parseInt(div.style.height) - 10) + "px");
-    svgElement.setAttribute("style","position: relative; top: -10%; left: 0%;")
-    svgElement.setAttribute("viewBox", "-96 0 512 512");
-    svgElement.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    const pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    pathElement.setAttribute("d", "M105.1 224H80a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h16v5.49c0 44-4.14 86.6-24 122.51h176c-19.89-35.91-24-78.51-24-122.51V288h16a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-25.1c29.39-18.38 49.1-50.78 49.1-88a104 104 0 0 0-208 0c0 37.22 19.71 69.62 49.1 88zM304 448H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h288a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z");
-    //space
-    // svgElement.setAttribute("fill", "white");
-    // svgElement.setAttribute("version", "1.1");
-    // svgElement.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    // svgElement.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
-    // svgElement.setAttribute("viewBox", "0 0 32 32");
-    // svgElement.setAttribute("xml:space", "preserve");
-    // svgElement.setAttribute("style","position: relative; top: -10%; left: 0%;")
-    // svgElement.setAttribute("width", div.style.width);
-    // svgElement.setAttribute("height", div.style.height);
-    // const pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    // pathElement.setAttribute("d", "M29.4,23.9c-0.3-1.6-1.2-3-2.4-4l-1.9-1.6c-0.4-0.3-0.8-0.7-1.1-1.1V21c0,0.6-0.4,1-1,1s-1-0.4-1-1v-7.3V13v-2 c0-5-2.6-9-6-9s-6,4-6,9v2v0.7V21c0,0.6-0.4,1-1,1s-1-0.4-1-1v-3.8c-0.3,0.4-0.7,0.8-1.1,1.1L5,19.9c-1.2,1-2.1,2.4-2.4,4L2,26.8 c-0.1,0.3,0,0.6,0.2,0.8C2.4,27.9,2.7,28,3,28h7v1c0,0.6,0.4,1,1,1h4v-9c0-0.6,0.4-1,1-1s1,0.4,1,1v9h4c0.6,0,1-0.4,1-1v-1h7 c0.3,0,0.6-0.1,0.8-0.4c0.2-0.2,0.3-0.5,0.2-0.8L29.4,23.9z M18,11c-0.6,0-1-0.4-1-1c0-0.6-0.4-1-1-1s-1,0.4-1,1c0,0.6-0.4,1-1,1 s-1-0.4-1-1c0-1.7,1.3-3,3-3s3,1.3,3,3C19,10.6,18.6,11,18,11z");
+   //chess
+   const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+   svgElement.setAttribute("version", "1.0");
+   svgElement.setAttribute("fill", "white");
+   svgElement.setAttribute("width", div.style.width);
+   svgElement.setAttribute("height", (parseInt(div.style.height) - 10) + "px");
+   svgElement.setAttribute("style","position: relative; top: -10%; left: 0%;")
+   svgElement.setAttribute("viewBox", "-96 0 512 512");
+   svgElement.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+   const pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+   pathElement.setAttribute("d", "M105.1 224H80a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h16v5.49c0 44-4.14 86.6-24 122.51h176c-19.89-35.91-24-78.51-24-122.51V288h16a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-25.1c29.39-18.38 49.1-50.78 49.1-88a104 104 0 0 0-208 0c0 37.22 19.71 69.62 49.1 88zM304 448H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h288a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z");
+   //space ship
+   // svgElement.setAttribute("fill", "white");
+   // svgElement.setAttribute("version", "1.1");
+   // svgElement.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+   // svgElement.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+   // svgElement.setAttribute("viewBox", "0 0 32 32");
+   // svgElement.setAttribute("xml:space", "preserve");
+   // svgElement.setAttribute("style","position: relative; top: -10%; left: 0%;")
+   // svgElement.setAttribute("width", div.style.width);
+   // svgElement.setAttribute("height", div.style.height);
+   // const pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+   // pathElement.setAttribute("d", "M29.4,23.9c-0.3-1.6-1.2-3-2.4-4l-1.9-1.6c-0.4-0.3-0.8-0.7-1.1-1.1V21c0,0.6-0.4,1-1,1s-1-0.4-1-1v-7.3V13v-2 c0-5-2.6-9-6-9s-6,4-6,9v2v0.7V21c0,0.6-0.4,1-1,1s-1-0.4-1-1v-3.8c-0.3,0.4-0.7,0.8-1.1,1.1L5,19.9c-1.2,1-2.1,2.4-2.4,4L2,26.8 c-0.1,0.3,0,0.6,0.2,0.8C2.4,27.9,2.7,28,3,28h7v1c0,0.6,0.4,1,1,1h4v-9c0-0.6,0.4-1,1-1s1,0.4,1,1v9h4c0.6,0,1-0.4,1-1v-1h7 c0.3,0,0.6-0.1,0.8-0.4c0.2-0.2,0.3-0.5,0.2-0.8L29.4,23.9z M18,11c-0.6,0-1-0.4-1-1c0-0.6-0.4-1-1-1s-1,0.4-1,1c0,0.6-0.4,1-1,1 s-1-0.4-1-1c0-1.7,1.3-3,3-3s3,1.3,3,3C19,10.6,18.6,11,18,11z");
     svgElement.appendChild(pathElement);
     div.appendChild(svgElement);
 }
@@ -204,6 +204,7 @@ function createEF(){
     checkInput.setAttribute('src',"../img/EF.png");
     checkInput.setAttribute('class',"EFCheck");
     checkInput.setAttribute("style","display: none; position: absolute;")
+    checkInput.setAttribute("style","z-index: 999;")
     efBox.appendChild(checkInput);
     efStatus.push(false);
 }
@@ -231,7 +232,6 @@ function exportJASON(){
     var exportData = JSON.stringify(mapObject,null,4);
     // JSON : exportData
 }
-
 
 function checkAll(){
     let allInput = characterDiv.querySelectorAll("input");
@@ -264,8 +264,8 @@ function checkAll(){
     const allTrue = efStatus.every((value) => value === true);
     if (allTrue && efStatus.length!=0 && mapChoosen!=="" && charObj.length!=1) 
         // alert("Enter Game");
-        exportJASON();
-        // window.location.href = 'home.html';
+        // exportJASON();
+        window.location.href = "home.html";
 }
 
 function sendCode(){
