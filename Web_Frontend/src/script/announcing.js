@@ -3,6 +3,7 @@ if (!roomData?.progress) {
 	alert("No game progress data found. Dont come here!")
 	location.href = "/Web_Frontend/src/page/setting.html";
 }
+document.querySelector("#bg-color").value = roomData.roomId;
 var images = ["../img/angle-duck.jpg"
 	, "../img/dark-duck.jpg"
 	, "../img/hurt-duck.jpg"
@@ -20,7 +21,7 @@ console.log(score)
 // ทอยได้หน้าเดิมต่อเนื่องมากสุด
 let frames = document.querySelectorAll(".special-content img")
 roomData.progress.reward.forEach((reward, index) => {
-	if(reward < 0)
+	if (reward < 0)
 		return;
 	let player = score[reward];
 	frames[index].src = player[2];
