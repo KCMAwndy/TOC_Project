@@ -28,14 +28,7 @@ function receiveMessageFromUnity(convertedText) {
 	console.log("unnity msg", a);
 	putProgress(roomData.roomId, a).then(async resp => {
 		if (resp.status === 200) {
-			console.log("save progress success, reloading from server");
-			getProgress(roomData.roomId).then(data => {
-				localStorage.setItem("roomData", JSON.stringify(data));
-				console.log("Save success, navigating")
-				setTimeout(() => {
-					window.location.href = "/Web_Frontend/src/page/announcing.html"
-				}, 5000);
-			});
+			console.log("save progress success");
 		}
 		else {
 			console.error(await resp.text())
@@ -44,6 +37,11 @@ function receiveMessageFromUnity(convertedText) {
 }
 function Summarize(code) {
 	console.log("openAnalysis: " + code);
+	getProgress(code).then(data => {
+		localStorage.setItem("roomData", JSON.stringify(data));
+		console.log("Save success, navigating")
+		window.location.href = "/Web_Frontend/src/page/announcing.html"
+	});
 }
 function startGame(unityInstance) {
 	if (roomData.progress) {
