@@ -4,15 +4,16 @@ if (!roomData?.progress) {
 	location.href = "/Web_Frontend/src/page/setting.html";
 }
 document.querySelector("#bg-color").value = roomData.roomId;
-var images = ["../img/angle-duck.jpg"
-	, "../img/dark-duck.jpg"
-	, "../img/hurt-duck.jpg"
-	, "../img/red-duck.webp"
-	, "../img/white-duck.webp"
-	, "../img/yellow-duck.webp"
-];
+var images = {
+	"red": "../img/red-duck.webp",
+	"blue": "../img/hurt-duck.jpg",
+	"yellow": "../img/yellow-duck.webp",
+	"green": "../img/angle-duck.jpg",
+	"purple": "../img/dark-duck.jpg",
+	"gray": "../img/white-duck.webp"
+};
 
-var score = roomData.users.map((user, index) => [roomData.progress.walkDistance[index], user.name, images[index]]);
+var score = roomData.users.map((user, index) => [roomData.progress.walkDistance[index], user.name, images[user.name]]);
 console.log(score)
 // เดินมากสุด
 // ถอยหลังมากสุด

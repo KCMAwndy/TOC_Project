@@ -32,7 +32,9 @@ function receiveMessageFromUnity(convertedText) {
 			getProgress(roomData.roomId).then(data => {
 				localStorage.setItem("roomData", JSON.stringify(data));
 				console.log("Save success, navigating")
-				window.location.href = "/Web_Frontend/src/page/announcing.html"
+				setTimeout(() => {
+					window.location.href = "/Web_Frontend/src/page/announcing.html"
+				}, 5000);
 			});
 		}
 		else {

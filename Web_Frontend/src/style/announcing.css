@@ -236,23 +236,20 @@ h3 {
     color: var(--white);
 }
 .special-content > :nth-child(1)::after {
-    content: "Backward Master!!!";
+    content: "The Walker!";
     
 }
 .special-content > :nth-child(2)::after {
-    content: "Event Loser!!!";
+    content: "The MoonWalker!";
 }
 .special-content > :nth-child(3)::after {
-    content: "Event Master!!!";
+    content: "Snake Lover!!!";
 }
 .special-content > :nth-child(4)::after {
-    content: "Stated King!!!";
+    content: "Event Master!!!";
 }
 .special-content > :nth-child(5)::after {
     content: "Identical Rolling!!!";
-}
-.special-content > :nth-child(6)::after {
-    content: "Stepping Master!!!";
 }
 
 .special-content > :nth-child(1) {
