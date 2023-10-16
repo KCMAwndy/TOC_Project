@@ -3,14 +3,15 @@ if (!roomData?.progress) {
 	alert("No game progress data found. Dont come here!")
 	location.href = "/Web_Frontend/src/page/setting.html";
 }
+
 document.querySelector("#bg-color").value = roomData.roomId;
 var images = {
-	"red": "../img/red-duck.webp",
-	"blue": "../img/hurt-duck.jpg",
-	"yellow": "../img/yellow-duck.webp",
-	"green": "../img/angle-duck.jpg",
-	"purple": "../img/dark-duck.jpg",
-	"gray": "../img/white-duck.webp"
+	"red": "../img/chess_red.svg",
+	"blue": "../img/chess_blue.svg",
+	"yellow": "../img/chess_yellow.svg",
+	"green": "../img/chess_green.svg",
+	"purple": "../img/chess_purple.svg",
+	"gray": "../img/chess_white.svg"
 };
 
 var score = roomData.users.map((user, index) => [roomData.progress.walkDistance[index], user.name, images[user.name]]);
