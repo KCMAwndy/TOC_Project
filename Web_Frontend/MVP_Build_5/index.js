@@ -55,7 +55,7 @@ function startGame(unityInstance) {
 function startPlayMode(unityInstance) {
 	var transmit = {
 		code: roomData.roomId,
-		pawnColor: roomData.users.map(u => u.name), // ["blue", "red", "green", "yellow", "purple", "white"],
+		pawnColor: roomData.users.map(u => u.color), // ["blue", "red", "green", "yellow", "purple", "white"],
 		map: roomData.gameMap.name // "map02"
 	}
 	console.log("transmit to ubity: ", transmit);

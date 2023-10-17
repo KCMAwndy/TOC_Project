@@ -14,7 +14,7 @@ var images = {
 	"gray": "../img/chess_white.svg"
 };
 
-var score = roomData.users.map((user, index) => [roomData.progress.walkDistance[index], user.name, images[user.name]]);
+var score = roomData.users.map((user, index) => [roomData.progress.walkDistance[index], user.name, images[user.color]]);
 console.log(score)
 // เดินมากสุด
 // ถอยหลังมากสุด

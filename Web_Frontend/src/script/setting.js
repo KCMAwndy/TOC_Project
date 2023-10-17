@@ -226,7 +226,8 @@ function exportJASON() {
 	nameArray.forEach(i => {
 		var playerObject = {} //สร้างใหม่ทุกครั้ง
 		//playerObject['Player Name'] = i.value;
-		playerObject['name'] = charColor[count];
+		playerObject['name'] = i.value;
+		playerObject['color'] = charColor[count];
 		playerData.push(playerObject);
 		count++;
 	});
