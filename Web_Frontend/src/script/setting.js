@@ -106,6 +106,7 @@ function addPlayer() {
 		elements.style = "width: 150px; height: 150px;";
 		insertName.maxLength = "15";
 		insertName.name = "username";
+		insertName.id = "color-name";
 		insertName.className = "position-relative top-0 start-50 translate-middle focus-ring text-white text-center fw-bold border border-0 rounded-pill bg-secondary";
 		insertName.style = "width: 120px; height: 30px;";
 		elements.append(insertName);
@@ -229,12 +230,13 @@ function setStateAndLeave(roomData) {
 
 function exportJASON() {
 	var playerData = []
-	var nameArray = characterDiv.querySelectorAll("input");
+	// var nameArray = characterDiv.querySelectorAll("input");
+	var colorArray = characterDiv.querySelectorAll("#color-name");
 	var count = 0
-	nameArray.forEach(i => {
+	colorArray.forEach(i => {
 		var playerObject = {} //สร้างใหม่ทุกครั้ง
 		//playerObject['Player Name'] = i.value;
-		playerObject['name'] = i.value;
+		playerObject['name'] = charColor[count];
 		playerObject['color'] = charColor[count];
 		playerData.push(playerObject);
 		count++;
@@ -250,20 +252,28 @@ function exportJASON() {
 	});
 }
 
-
 function checkAll() {
-	let allInput = characterDiv.querySelectorAll("input");
+	let allInput = characterDiv.querySelectorAll("#color-name");
+	// console.log(allInput);
 	let inputName = [];
 	let count = 0;
 	allInput.forEach(i => {
-		if ((i.value.trim() === "" && i.placeholder !== "") || inputName.includes((i.value)) || charColor[count] == "") {
-			(efBox.childNodes[count]).style.display = "flex";
-			updateXY();
-		}
-		else
-			efStatus[count] = true;
-		inputName.push(i.value);
-		count++;
+		// if ((i.value.trim() === "" && i.placeholder !== "") || inputName.includes((i.value)) || charColor[count] == "") {
+		// 	(efBox.childNodes[count]).style.display = "flex";
+		// 	updateXY();
+		// }
+		// else
+		// 	efStatus[count] = true;
+		// inputName.push(i.value);
+		// count++;
+		if (charColor[count] == "") {
+				(efBox.childNodes[count]).style.display = "flex";
+				updateXY();
+			}
+			else
+				efStatus[count] = true;
+			inputName.push(i.value);
+			count++;
 	});
 
 	if (mapChoosen === "") {
