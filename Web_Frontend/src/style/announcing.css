@@ -95,13 +95,13 @@ h3 {
     content: "Back";
 } */
 #back{
-    position: relative;
-    left: 11%;
-    bottom: 7%;
+    position: absolute;
+    left: -6.5%;
+    top: -310%;
 }
 
 #back img{
-    width: 50px;
+    width: 70px;
 }
 
 /* ----------------------------------------------- score board -----------------------------------------------*/
@@ -211,6 +211,7 @@ h3 {
     flex-direction: column;
     color: var(--gray);
     position: relative;
+    margin-top: 1%;
     top: -2%;
 }
 .special-header {

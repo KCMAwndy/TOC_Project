@@ -225,9 +225,13 @@ border-radius: 15px;
     margin-right: 45vh;
 }
 
+#back{
+    position: absolute;
+    left:-6%;
+    top:-30%;
+}
+
 #back img{
     width: 70px;
     position: absolute;
-    right: -50%;
-    top: 140%;
 }
