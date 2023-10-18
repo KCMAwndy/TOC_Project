@@ -42,15 +42,12 @@
 							<div id="unity-progress-bar-full"></div>
 						</div>
 					</div>
-					<!--
-      <div id="unity-warning" > </div>
-      <div id="unity-footer" >
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">ToC Project</div>
-      </div>
-    -->
+					
+				<div id="unity-footer" >
+					<div id="unity-webgl-logo"></div>
+					<div id="unity-fullscreen-button"></div>
 				</div>
+			</div>
 
 			<button id="back" onclick="window.location.href='/Web_Frontend/src/page/setting.html'">
 				<img src="/Web_Frontend/src/img/back-arrow2.png">
@@ -142,10 +139,9 @@
 						progressBarFull.style.width = 100 * progress + "%";
 					}).then((unityInstance) => {
 						loadingBar.style.display = "none";
-						/*fullscreenButton.onclick = () => {
-						  
+						fullscreenButton.onclick = () => {
 						  unityInstance.SetFullscreen(1);
-						};*/
+						};
 						startGame(unityInstance);
 					}).catch((message) => {
 						alert(message);

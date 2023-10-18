@@ -235,3 +235,13 @@ border-radius: 15px;
     width: 70px;
     position: absolute;
 }
+
+#unity-footer{
+    /* border:5px solid white; */
+    position: relative;
+    top: -7%;
+}
+
+#unity-fullscreen-button{
+    position: relative;
+}
