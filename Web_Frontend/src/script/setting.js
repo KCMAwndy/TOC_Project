@@ -54,9 +54,15 @@ colorBtn.forEach(function(i) {
 				}
 			}
 			(charObj[divNum].childNodes[1]).style.fill = charColor[divNum];
+			(charObj[divNum].childNodes[0]).innerHTML  = charColor[divNum];
 		}
 	});
 });
+
+// for(int i=0;i< charObj.length; i++){
+
+// }
+
 
 for (let i = 0; i < 5; i++) {
 	//map
@@ -92,16 +98,14 @@ function addPlayer() {
 	choosenChar.setAttribute("style", "display: none");
 	if (charEmpty.style.display === 'flex')
 		charEmpty.style.display = 'none';
-	if (divCheck.length < 6) {
+	if (charObj.length < 6) {
 		createEF();
 		var elements = document.createElement("div");
-		var insertName = document.createElement("input");
+		var insertName = document.createElement("div");
 		elements.className = "mx-3 mt-4 position: relative";
 		elements.style = "width: 150px; height: 150px;";
 		insertName.maxLength = "15";
-		insertName.type = "text";
 		insertName.name = "username";
-		insertName.placeholder = "Input Name";
 		insertName.className = "position-relative top-0 start-50 translate-middle focus-ring text-white text-center fw-bold border border-0 rounded-pill bg-secondary";
 		insertName.style = "width: 120px; height: 30px;";
 		elements.append(insertName);
@@ -114,29 +118,33 @@ function addPlayer() {
 		elements.onclick = function() {
 			let posY = elements.offsetTop;
 			let posX = elements.offsetLeft;
-			colorDiv.setAttribute("style", "display: flex; position: absolute");
-			colorDiv.style.top = (posY + elements.offsetHeight + 15).toString() + 'px';
-			colorDiv.style.left = (posX - (elements.offsetWidth / 2)).toString() + 'px';
+			if(colorDiv.style.display == "none"){
+				colorDiv.setAttribute("style", "display: flex; position: absolute");
+				colorDiv.style.top = (posY + elements.offsetHeight + 15).toString() + 'px';
+				colorDiv.style.left = (posX - (elements.offsetWidth / 2)).toString() + 'px';
+			}
+			else if(colorDiv.style.display == "flex")
+				colorDiv.setAttribute("style", "display: none;");
 			divNum = charObj.indexOf(elements);
 			(efBox.childNodes[divNum]).style.display = "none";
-			let inputElement = characterDiv.querySelectorAll("input");
-			inputElement.forEach(function(i) {
-				if (i.value.trim() === "") {
-					i.placeholder = "Input Name";
-					i.style = "width: 120px; height: 30px;"
-				}
-			});
+			// let inputElement = characterDiv.querySelectorAll("input");
+			// inputElement.forEach(function(i) {
+			// 	if (i.value.trim() === "") {
+			// 		i.placeholder = "Input Name";
+			// 		i.style = "width: 120px; height: 30px;"
+			// 	}
+			// });
 			choosenChar.setAttribute("style", "display: flex; position: absolute; height: 50px; width: 50px");
 			choosenChar.style.top = (posY - insertName.offsetHeight - (choosenChar.offsetHeight / 2)).toString() + 'px';
 			choosenChar.style.left = (posX + (elements.offsetWidth / 2) - (choosenChar.offsetWidth / 2)).toString() + 'px';
 		};
-		insertName.addEventListener("input", function() {
-			if (insertName.value.trim() === "") {
-				insertName.placeholder = "";
-			} else {
-				insertName.placeholder = "Input Name";
-			}
-		});
+		// insertName.addEventListener("input", function() {
+		// 	if (insertName.value.trim() === "") {
+		// 		insertName.placeholder = "";
+		// 	} else {
+		// 		insertName.placeholder = "Input Name";
+		// 	}
+		// });
 	}
 	updateXY();
 }
