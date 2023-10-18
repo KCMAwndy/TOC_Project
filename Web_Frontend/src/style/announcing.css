@@ -73,7 +73,7 @@ h3 {
     width: 60px;
     /* height: 40px; */
 }
-.announcing-container .playing-button button {
+/* .announcing-container .playing-button button {
     position: relative;
     bottom: 3%;
     right: 3%;
@@ -81,8 +81,8 @@ h3 {
     cursor: pointer;
     appearance: none;
     background-color: inherit;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     stroke: #dbdbdb;
     stroke-width: 5px;
 }
@@ -93,6 +93,15 @@ h3 {
 .announcing-container button img::after {
     position: absolute;
     content: "Back";
+} */
+#back{
+    position: relative;
+    left: 11%;
+    bottom: 7%;
+}
+
+#back img{
+    width: 50px;
 }
 
 /* ----------------------------------------------- score board -----------------------------------------------*/
@@ -243,7 +252,6 @@ h3 {
 }
 .special-content > :nth-child(1)::after {
     content: "The Walker!";
-    
 }
 .special-content > :nth-child(2)::after {
     content: "The MoonWalker!";
@@ -433,7 +441,7 @@ border-radius: 15px;
     grid-area: 100px;
 }
 .playing-button{
-    max-width: 60dvh; 
+    max-width: 60vh; 
     height: 74vh;
     position:absolute;
     display: flex;

@@ -16,11 +16,11 @@ var mapEmpty = document.getElementById("check-map-empty");
 var charEmpty = document.getElementById("check-character-empty");
 
 colorDiv.setAttribute("style", "display: none");
-colorDiv.addEventListener("mouseleave", function() {
-	setTimeout(function() {
-		colorDiv.setAttribute("style", "display: none");
-	}, 5000);
-})
+// colorDiv.addEventListener("mouseleave", function() {
+// 	setTimeout(function() {
+// 		colorDiv.setAttribute("style", "display: none");
+// 	}, 5000);
+// })
 
 for (let i = 0; i < 6; i++) {
 	//color button
