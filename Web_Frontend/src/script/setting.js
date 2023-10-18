@@ -255,7 +255,7 @@ function exportJASON() {
 function checkAll() {
 	let allInput = characterDiv.querySelectorAll("#color-name");
 	// console.log(allInput);
-	let inputName = [];
+	// let inputName = [];
 	let count = 0;
 	allInput.forEach(i => {
 		// if ((i.value.trim() === "" && i.placeholder !== "") || inputName.includes((i.value)) || charColor[count] == "") {
@@ -272,7 +272,7 @@ function checkAll() {
 			}
 			else
 				efStatus[count] = true;
-			inputName.push(i.value);
+			// inputName.push(i.value);
 			count++;
 	});
 
