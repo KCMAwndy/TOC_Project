@@ -211,7 +211,7 @@ h3 {
     flex-direction: column;
     color: var(--gray);
     position: relative;
-    margin-top: 1%;
+    margin-top: 0.5%;
     top: -2%;
 }
 .special-header {
